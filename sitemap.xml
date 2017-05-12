@@ -22,20 +22,14 @@
   </url>
   
   <url>
-    <loc>http://gaoyans.cn/categories/development/</loc>
-    <lastmod>2017-05-12T09:58:37+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://gaoyans.cn/tags/development/</loc>
     <lastmod>2017-05-12T09:58:37+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gaoyans.cn/categories/devops/</loc>
-    <lastmod>2017-05-12T09:58:07+08:00</lastmod>
+    <loc>http://gaoyans.cn/categories/development/</loc>
+    <lastmod>2017-05-12T09:58:37+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -46,7 +40,7 @@
   </url>
   
   <url>
-    <loc>http://gaoyans.cn/categories/docker/</loc>
+    <loc>http://gaoyans.cn/categories/devops/</loc>
     <lastmod>2017-05-12T09:58:07+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -58,19 +52,25 @@
   </url>
   
   <url>
+    <loc>http://gaoyans.cn/categories/docker/</loc>
+    <lastmod>2017-05-12T09:58:07+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://gaoyans.cn/</loc>
     <lastmod>2017-05-12T09:58:37+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gaoyans.cn/categories/life/</loc>
+    <loc>http://gaoyans.cn/tags/life/</loc>
     <lastmod>2017-05-12T09:34:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gaoyans.cn/tags/life/</loc>
+    <loc>http://gaoyans.cn/categories/life/</loc>
     <lastmod>2017-05-12T09:34:15+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -94,13 +94,13 @@
   </url>
   
   <url>
-    <loc>http://gaoyans.cn/categories/tmux/</loc>
+    <loc>http://gaoyans.cn/tags/tmux/</loc>
     <lastmod>2017-05-12T09:58:37+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gaoyans.cn/tags/tmux/</loc>
+    <loc>http://gaoyans.cn/categories/tmux/</loc>
     <lastmod>2017-05-12T09:58:37+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -112,13 +112,13 @@
   </url>
   
   <url>
-    <loc>http://gaoyans.cn/categories/writing/</loc>
+    <loc>http://gaoyans.cn/tags/writing/</loc>
     <lastmod>2017-05-12T09:34:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gaoyans.cn/tags/writing/</loc>
+    <loc>http://gaoyans.cn/categories/writing/</loc>
     <lastmod>2017-05-12T09:34:15+08:00</lastmod>
     <priority>0</priority>
   </url>
