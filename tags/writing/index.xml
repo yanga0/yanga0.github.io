@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Writing on Just On Time</title>
+    <link>http://gaoyans.cn/tags/writing/</link>
+    <description>Recent content in Writing on Just On Time</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 12 May 2017 09:34:15 +0800</lastBuildDate>
+    
+	<atom:link href="http://gaoyans.cn/tags/writing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The restarting</title>
+      <link>http://gaoyans.cn/post/the-restarting/</link>
+      <pubDate>Fri, 12 May 2017 09:34:15 +0800</pubDate>
+      
+      <guid>http://gaoyans.cn/post/the-restarting/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

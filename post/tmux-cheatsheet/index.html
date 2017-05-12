@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>tmux cheatsheet // Just On Time</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta property="og:title" content="tmux cheatsheet" />
+<meta property="og:description" content="tmux cheatsheet &amp; tips." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:url" content="http://gaoyans.cn/post/tmux-cheatsheet/" />
+
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Just On Time" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link href="http://gaoyans.cn/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+    <link href="http://gaoyans.cn/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="http://gaoyans.cn/css/style.css">
+
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    <meta name="description" content="tmux cheatsheet &amp; tips.">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <meta name="generator" content="Hugo 0.20.7" />
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://gaoyans.cn/">Just On Time</a>
+            <nav id="main-nav">
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">tmux cheatsheet</h1>
+        </header>
+        
+        <div class="article-meta">
+            <a href="/post/tmux-cheatsheet/" class="article-date">
+                <time datetime='2017-05-12T09:58:37.000&#43;08:00' itemprop="datePublished">2017-05-12</time>
+            </a>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://gaoyans.cn//categories/development">Development</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://gaoyans.cn//categories/tools">Tools</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://gaoyans.cn//categories/tmux">tmux</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            
+
+<h1 id="tmux使用技巧">tmux使用技巧</h1>
+
+<h1 id="tmux-shortcuts-cheatsheet">tmux shortcuts &amp; cheatsheet</h1>
+
+<p><mark>quoted from:</mark> <a href="https://github.com/der-flo/tmux_cheatsheet">https://github.com/der-flo/tmux_cheatsheet</a></p>
+
+<h1 id="tmux-cheatsheet">tmux cheatsheet</h1>
+
+<p>Based on <a href="http://pragprog.com/book/bhtmux/tmux">tmux: Productive Mouse-Free Development</a>
+(The Pragmatic Progammers - Brian P. Hogan).</p>
+
+<table>
+<thead>
+<tr>
+<th>Shell command</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>tmux new-session -s sessionname</code><br><code>tmux new -s sessionname</code></td>
+<td>Create a named session called <em>sessionname</em></td>
+</tr>
+
+<tr>
+<td><code>tmux new -s sessionname -d top</code></td>
+<td>Create detached session and run <em>top</em> inside</td>
+</tr>
+
+<tr>
+<td><code>tmux new -s sessionname -n win</code></td>
+<td>Create session <em>sessionname</em> with window <em>win</em></td>
+</tr>
+
+<tr>
+<td><code>tmux list-sessions</code> <br> <code>tmux ls</code></td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>tmux attach</code></td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>tmux attach -t sessionname</code></td>
+<td>Attach to session with name <em>sessionname</em></td>
+</tr>
+
+<tr>
+<td><code>tmux kill-session -t sessionname</code></td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>tmux has-session -t sessionname</code></td>
+<td>Returns 0 if session exists</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>PREFIX (<code>CTRL-b</code>) + …</th>
+<th>Description</th>
+<th>Custom mapping</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>d</code></td>
+<td>Detach</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>:</code></td>
+<td>Enter command mode</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>?</code></td>
+<td>See all keybindings</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>r</code></td>
+<td>Reload config file (<code>.tmux.conf</code>)</td>
+<td>yes</td>
+</tr>
+
+<tr>
+<td><code>(</code></td>
+<td>Switch to next session</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>)</code></td>
+<td>Switch to previous session</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>s</code></td>
+<td>Show session menu</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>$</code></td>
+<td>Rename session</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>P</code></td>
+<td>Toggle logging output to ~/<em>window_name</em>.log</td>
+<td>yes</td>
+</tr>
+
+<tr>
+<td><code>ESCAPE</code></td>
+<td>Enter copy mode</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>p</code></td>
+<td>Paste from buffer</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>CTRL-c</code></td>
+<td>Copy buffer to MAC clipboard</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="windows">Windows</h2>
+
+<table>
+<thead>
+<tr>
+<th>PREFIX (<code>CTRL-b</code>) + …</th>
+<th>Description</th>
+<th>Custom mapping</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>c</code></td>
+<td>Create window</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>,</code></td>
+<td>Rename window</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>n</code></td>
+<td>Go to next window</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>CTRL-h</code>, <code>CTRL-l</code></td>
+<td>Select next/previous window</td>
+<td>yes</td>
+</tr>
+
+<tr>
+<td><code>0</code></td>
+<td>Go to window no <code>0</code></td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>1</code></td>
+<td>Go to window no <code>1</code></td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>f</code></td>
+<td>Find window by name</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>w</code></td>
+<td>Select window by menu</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>&amp;</code></td>
+<td>Kill window (after confirmation)</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>.</code></td>
+<td>Move window to another session</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="panes">Panes</h2>
+
+<table>
+<thead>
+<tr>
+<th>PREFIX (<code>CTRL-b</code>) + …</th>
+<th>Description</th>
+<th>Custom mapping</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>%</code></td>
+<td>Split horizontally</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>PIPE</code></td>
+<td>Split horizontally</td>
+<td>yes</td>
+</tr>
+
+<tr>
+<td><code>&quot;</code></td>
+<td>Split vertically</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>-</code></td>
+<td>Split vertically</td>
+<td>yes</td>
+</tr>
+
+<tr>
+<td><code>o</code></td>
+<td>Cycle through panes</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>h</code>, <code>j</code>, <code>k</code>, <code>l</code></td>
+<td>Select next pane in vim-direction</td>
+<td>yes</td>
+</tr>
+
+<tr>
+<td><code>SPACE</code></td>
+<td>Cycle pane layout (<code>even-horizontal</code>, <code>even-vertical</code>, <code>main-horizontal</code>, <code>main-vertical</code>, <code>tiled</code>)</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>H</code>, <code>J</code>, <code>K</code>, <code>L</code></td>
+<td>Resize pane in vim-direction (5 column-wise)</td>
+<td>yes</td>
+</tr>
+
+<tr>
+<td><code>!</code></td>
+<td>Move active pane to a new window</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>z</code></td>
+<td>Zoom pane</td>
+<td>tmux 1.8</td>
+</tr>
+
+<tr>
+<td><code>UP</code></td>
+<td>Maximize pane</td>
+<td>yes</td>
+</tr>
+
+<tr>
+<td><code>DOWN</code></td>
+<td>Redo maximize pane</td>
+<td>yes</td>
+</tr>
+
+<tr>
+<td><code>x</code></td>
+<td>Kill pane (after confirmation)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="command-mode">Command mode</h2>
+
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>new-window -n redis &quot;redis-server&quot;</code></td>
+<td>Open new window, name it <em>windowname</em> and run <em>redis-server</em> in it.</td>
+</tr>
+
+<tr>
+<td><code>capture-pane</code></td>
+<td>Copy entire visible contents of pane into the paste buffer</td>
+</tr>
+
+<tr>
+<td><code>show-buffer</code></td>
+<td>Show contents of actual buffer</td>
+</tr>
+
+<tr>
+<td><code>save-buffer file.txt</code></td>
+<td>Save buffer to <code>file.txt</code></td>
+</tr>
+
+<tr>
+<td><code>list-buffers</code></td>
+<td>Show all buffers</td>
+</tr>
+
+<tr>
+<td><code>choose-buffer</code></td>
+<td>Chosse a buffer and paste</td>
+</tr>
+
+<tr>
+<td><code>join-pane -s source_session_name:1.1</code></td>
+<td>Move pane 1 in window 1 of session source_session_name to the actual window`</td>
+</tr>
+
+<tr>
+<td><code>join-pane -s src_sess:2.1 -t dst_sess:1.1</code></td>
+<td>Move pane 1 in window 2 of session src_sess to session dst_session in window 1 near pane 1`</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="copy-mode">Copy mode</h2>
+
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>h</code>, <code>j</code>, <code>k</code>, <code>l</code></td>
+<td>Move around</td>
+</tr>
+
+<tr>
+<td><code>ENTER</code></td>
+<td>Leave copy mode</td>
+</tr>
+
+<tr>
+<td><code>w</code></td>
+<td>Jump to next word</td>
+</tr>
+
+<tr>
+<td><code>b</code></td>
+<td>Jump to previous word</td>
+</tr>
+
+<tr>
+<td><code>fA</code></td>
+<td>Jump to next <code>A</code> in the actual line</td>
+</tr>
+
+<tr>
+<td><code>FA</code></td>
+<td>Jump to previous <code>A</code> in the actual line</td>
+</tr>
+
+<tr>
+<td><code>CTRL-b</code></td>
+<td>Down one page</td>
+</tr>
+
+<tr>
+<td><code>CTRL-f</code></td>
+<td>Up one page</td>
+</tr>
+
+<tr>
+<td><code>g</code></td>
+<td>Jump to top of buffer</td>
+</tr>
+
+<tr>
+<td><code>G</code></td>
+<td>Jump to bottom of buffer</td>
+</tr>
+
+<tr>
+<td><code>?</code></td>
+<td>Backward search</td>
+</tr>
+
+<tr>
+<td><code>/</code></td>
+<td>Foreward search</td>
+</tr>
+
+<tr>
+<td><code>n</code></td>
+<td>Go to next occurence</td>
+</tr>
+
+<tr>
+<td><code>N</code></td>
+<td>Go to previous occurence</td>
+</tr>
+
+<tr>
+<td><code>SPACE</code></td>
+<td>Begin selecting text</td>
+</tr>
+
+<tr>
+<td><code>v</code></td>
+<td>Begin selecting text</td>
+</tr>
+
+<tr>
+<td><code>y</code></td>
+<td>Copy selection to buffer</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="more">More</h2>
+
+<ul>
+<li><a href="https://github.com/der-flo/dotfiles/blob/master/tmux.conf"><code>~/.tmux.conf</code></a></li>
+<li><a href="http://pragprog.com/book/bhtmux/tmux">tmux: Productive Mouse-Free Development</a>.</li>
+<li><a href="http://www.openbsd.org/cgi-bin/man.cgi?query=tmux">Man page</a></li>
+</ul>
+
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#tmux使用技巧">tmux使用技巧</a></li>
+<li><a href="#tmux-shortcuts-cheatsheet">tmux shortcuts &amp; cheatsheet</a></li>
+<li><a href="#tmux-cheatsheet">tmux cheatsheet</a>
+<ul>
+<li><a href="#windows">Windows</a></li>
+<li><a href="#panes">Panes</a></li>
+<li><a href="#command-mode">Command mode</a></li>
+<li><a href="#copy-mode">Copy mode</a></li>
+<li><a href="#more">More</a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://gaoyans.cn//tags/development">development
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://gaoyans.cn//tags/tmux">tmux
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <nav id="article-nav">
+    
+    
+    <a href="/post/how-to-create-a-docker-registry/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">how to create a docker registry&nbsp;<span>&gt;</span></div>
+    </a>
+    
+</nav>
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 Just On Time&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with theme <a href="https://github.com/carsonip/hugo-theme-minos">Minos</a>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+</div>
+</body>
+</html>

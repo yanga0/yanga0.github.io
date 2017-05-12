@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>how to create a docker registry // Just On Time</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta property="og:title" content="how to create a docker registry" />
+<meta property="og:description" content="guidelines for using docker registry" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:url" content="http://gaoyans.cn/post/how-to-create-a-docker-registry/" />
+
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Just On Time" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link href="http://gaoyans.cn/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+    <link href="http://gaoyans.cn/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="http://gaoyans.cn/css/style.css">
+
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    <meta name="description" content="guidelines for using docker registry">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <meta name="generator" content="Hugo 0.20.7" />
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://gaoyans.cn/">Just On Time</a>
+            <nav id="main-nav">
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">how to create a docker registry</h1>
+        </header>
+        
+        <div class="article-meta">
+            <a href="/post/how-to-create-a-docker-registry/" class="article-date">
+                <time datetime='2017-05-12T09:58:07.000&#43;08:00' itemprop="datePublished">2017-05-12</time>
+            </a>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://gaoyans.cn//categories/devops">Devops</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://gaoyans.cn//categories/tools">Tools</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://gaoyans.cn//categories/docker">Docker</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            
+
+<h1 id="如何创建一个私有的docker-registry">如何创建一个私有的Docker Registry？</h1>
+
+<p>Docker是一个这两年流行起来的容器化构建、部署和应用运行的开发工具，它不仅能帮助开发者快速搭建开发环境，快速进行测试，也能帮助企业进行更快速的更方便的发布和部署产品。</p>
+
+<p><a name="toc"></a></p>
+
+<h3 id="0-目录">0. 目录</h3>
+
+<ol>
+<li><em><a href="#ch1">什么是Docker？</a></em></li>
+<li><em><a href="#ch2">Docker可以拿来做什么？</a></em></li>
+<li><em><a href="#ch3">怎么提交一个Docker镜像？</a></em></li>
+<li><em><a href="#ch4">什么是Docker Registry？</a></em></li>
+<li><em><a href="#ch5">怎么创建一个私有的Registry？</a></em></li>
+</ol>
+
+<p><a name="ch1"></a></p>
+
+<h3 id="1-什么是docker-toc">1. 什么是Docker？<a href="#toc">↩</a></h3>
+
+<blockquote>
+<p>Docker is an open platform to build, ship and run distributed applications anywhere.</p>
+</blockquote>
+
+<p>这是Docker官方给出的对Docker的定义性解释。Docker是一个在任何环境中构建、分发以及运行分布式应用的开放平台。</p>
+
+<p>1）与VMWare、VirtualBox、KVM等虚拟化平台相比，运行在Docker容器中各个实例使用同一套底层操作系统内核，而不是为每一个实例设置一套操作系统，所以Docker有着<strong>轻量化</strong>的特点。</p>
+
+<p>2）Docker平台可以支持大多数linux发行版系统以及Windows系统（最近也开始支持Mac OS系统，之前是通过代理实现），其<strong>开放性</strong>使运行在Docker平台上的应用可以非常方便地移植到各种平台，</p>
+
+<p>3）同时运行在各容器中的的应用之间又有着很强的隔离性，在这种层面上保证了各应用以及底层系统本身的<strong>安全性</strong>。</p>
+
+<p><a name="ch2"></a></p>
+
+<h3 id="2-docker可以拿来做什么-toc">2. Docker可以拿来做什么？<a href="#toc">↩</a></h3>
+
+<p>Docker镜像化<a href="http://www.bing.com" title="什么是镜像？">(?)</a>和容器化<a href="http://www.bing.com" title="什么是容器？">(?)</a>极大地方便了应用的发布、部署和移植。</p>
+
+<ol>
+<li><p>开发者快速验证</p></li>
+
+<li><p>应用微服务架构部署</p></li>
+
+<li><p>分布式应用伸缩部署</p></li>
+</ol>
+
+<p><a name="ch3"></a></p>
+
+<h3 id="3-怎么提交一个docker镜像-toc">3. 怎么提交一个Docker镜像？<a href="#toc">↩</a></h3>
+
+<p>镜像可以是由本地build构建<a href="http://www.bing.com" title="怎么build一个Docker镜像？">(?)</a>出来的，也可以是由公共的或者私有的Docker镜像仓库下载来的。我们可以对下载到本地的Docker镜像进行修改编辑并提交为新的镜像。下面以下载Ubuntu官方镜像并提交到Docker Hub个人仓库为例，来说明镜像提交的过程。</p>
+
+<p>第一步，下载（拉取）官方Ubuntu镜像，</p>
+
+<pre><code>docker pull ubuntu
+</code></pre>
+
+<p>第二步，给上步骤中下载的ubuntu镜像添加tag<a href="http://www.bing.com" title="什么是Tag？">(?)</a>，生成“新的镜像”，（仔细看FS layer就会发现，其实与上步镜像是同一个镜像），</p>
+
+<pre><code>docker tag ubuntu   &lt;your docker hub account&gt;/ubuntu
+</code></pre>
+
+<p>第三步，将上步中的新镜像提交到Docker Hub。</p>
+
+<pre><code>docker push &lt;your docker hub account&gt;/ubuntu
+</code></pre>
+
+<p>然后，我们通过Docker Hub网站或者命令行搜素，就可以看到我们刚才提交的镜像了。</p>
+
+<p><a name="ch4"></a></p>
+
+<h3 id="4-什么是docker-registry-toc">4. 什么是Docker Registry？<a href="#toc">↩</a></h3>
+
+<p>由于网络的原因（你懂的）或是企业内部有离线使用的需求，从Docker Hub官方的镜像仓库(现已改成<a href="https://store.docker.com/">Docker Store</a>)下载镜像会经常出现错误，或者速度很慢。所以我们需要将镜像源切换为国内的服务镜像，或者是搭建私有的镜像仓库服务。这个能够提供Docker镜像上传（注册）和下载的服务即Docker Registry。</p>
+
+<p><a name="ch5"></a></p>
+
+<h3 id="5-怎么创建一个私有的registry-toc">5. 怎么创建一个私有的Registry？<a href="#toc">↩</a></h3>
+
+<p>创建一个Docker Registry仓库其实很简单，因为Docker Registry服务本身就是一个应用，所以就可以借助Docker平台来快速部署起来。以下是实现过程：</p>
+
+<p>第一步，拉取Docker Registry镜像，</p>
+
+<pre><code>docker pull registry:2
+</code></pre>
+
+<p>第二步，启动并运行，</p>
+
+<pre><code>docker run -d -p 5000:5000 --restart=always --name registry registry:2
+</code></pre>
+
+<p>第三步，查看并测试，</p>
+
+<pre><code>docker ps
+</code></pre>
+
+<p>查看正在运行的docker容器有没有上步中创建的registry。并通过<code>docker pull</code>与<code>docker push</code>测试本地registry是否可用。正常情形下，本地registry服务URL地址为<u>localhost:5000</u>或者<u>&lt;本机IP&gt;:5000</u>.</p>
+
+<p><a name="ch6"></a></p>
+
+<h3 id="6-怎么注册镜像到registry-toc">6. 怎么注册镜像到Registry？<a href="#toc">↩</a></h3>
+
+<p>（待补充）</p>
+
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#如何创建一个私有的docker-registry">如何创建一个私有的Docker Registry？</a>
+<ul>
+<li>
+<ul>
+<li><a href="#0-目录">0. 目录</a></li>
+<li><a href="#1-什么是docker-toc">1. 什么是Docker？<a href="#toc">↩</a></a></li>
+<li><a href="#2-docker可以拿来做什么-toc">2. Docker可以拿来做什么？<a href="#toc">↩</a></a></li>
+<li><a href="#3-怎么提交一个docker镜像-toc">3. 怎么提交一个Docker镜像？<a href="#toc">↩</a></a></li>
+<li><a href="#4-什么是docker-registry-toc">4. 什么是Docker Registry？<a href="#toc">↩</a></a></li>
+<li><a href="#5-怎么创建一个私有的registry-toc">5. 怎么创建一个私有的Registry？<a href="#toc">↩</a></a></li>
+<li><a href="#6-怎么注册镜像到registry-toc">6. 怎么注册镜像到Registry？<a href="#toc">↩</a></a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://gaoyans.cn//tags/development">development
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://gaoyans.cn//tags/golang">golang
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <nav id="article-nav">
+    
+    <a href="/post/tmux-cheatsheet/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;
+            tmux cheatsheet
+        </div>
+    </a>
+    
+    
+    <a href="/post/the-restarting/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">The restarting&nbsp;<span>&gt;</span></div>
+    </a>
+    
+</nav>
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 Just On Time&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with theme <a href="https://github.com/carsonip/hugo-theme-minos">Minos</a>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+</div>
+</body>
+</html>
