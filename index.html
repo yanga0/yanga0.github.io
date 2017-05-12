@@ -90,7 +90,7 @@
                 <div class="article-entry" itemprop="articleBody">
                     <p>
                         
-                    tmux使用技巧 tmux shortcuts &amp; cheatsheet quoted from: https://github.com/der-flo/tmux_cheatsheet
+                    tmux使用技巧 tmux shortcuts &amp; cheatsheet quoted from: https://github.com/der-flo/tmux_cheatsheet. &amp; great thanks.
 tmux cheatsheet Based on tmux: Productive Mouse-Free Development (The Pragmatic Progammers - Brian P. Hogan).
    Shell command Description     tmux new-session -s sessionname
 tmux new -s sessionname Create a named session called sessionname   tmux new -s sessionname -d top Create detached session and run top inside   tmux new -s sessionname -n win Create session sessionname with window win   tmux list-sessions tmux ls    tmux attach    tmux attach -t sessionname Attach to session with name sessionname   tmux kill-session -t sessionname    tmux has-session -t sessionname Returns 0 if session exists       PREFIX (CTRL-b) + … Description Custom mapping     d Detach    : Enter command mode    ?
@@ -187,12 +187,12 @@ docker tag ubuntu &lt;your docker hub account&gt;/ubuntu  第三步，将上步�
                     <ul class="article-tag-list">
                         
                         <li class="article-tag-list-item">
-                            <a class="article-tag-list-link" href="http://gaoyans.cn//tags/development">development
+                            <a class="article-tag-list-link" href="http://gaoyans.cn//tags/devops">devops
                             </a>
                         </li>
                         
                         <li class="article-tag-list-item">
-                            <a class="article-tag-list-link" href="http://gaoyans.cn//tags/golang">golang
+                            <a class="article-tag-list-link" href="http://gaoyans.cn//tags/docker">docker
                             </a>
                         </li>
                         
@@ -271,7 +271,25 @@ docker tag ubuntu &lt;your docker hub account&gt;/ubuntu  第三步，将上步�
         
 
     </section>
-    <footer id="footer">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'yanga0';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
             &copy; 2017 Just On Time&nbsp;
@@ -296,6 +314,7 @@ docker tag ubuntu &lt;your docker hub account&gt;/ubuntu  第三步，将上步�
         });
     </script>
 </footer>
+
 </div>
 </body>
 </html>

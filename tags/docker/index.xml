@@ -1,27 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Just On Time</title>
-    <link>http://gaoyans.cn/post/</link>
-    <description>Recent content in Posts on Just On Time</description>
+    <title>Docker on Just On Time</title>
+    <link>http://gaoyans.cn/tags/docker/</link>
+    <description>Recent content in Docker on Just On Time</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 12 May 2017 09:58:37 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 12 May 2017 09:58:07 +0800</lastBuildDate>
     
-	<atom:link href="http://gaoyans.cn/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://gaoyans.cn/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>tmux cheatsheet</title>
-      <link>http://gaoyans.cn/post/tmux-cheatsheet/</link>
-      <pubDate>Fri, 12 May 2017 09:58:37 +0800</pubDate>
-      
-      <guid>http://gaoyans.cn/post/tmux-cheatsheet/</guid>
-      <description>tmux使用技巧 tmux shortcuts &amp;amp; cheatsheet quoted from: https://github.com/der-flo/tmux_cheatsheet. &amp;amp; great thanks.
-tmux cheatsheet Based on tmux: Productive Mouse-Free Development (The Pragmatic Progammers - Brian P. Hogan).
-   Shell command Description     tmux new-session -s sessionname
-tmux new -s sessionname Create a named session called sessionname   tmux new -s sessionname -d top Create detached session and run top inside   tmux new -s sessionname -n win Create session sessionname with window win   tmux list-sessions tmux ls    tmux attach    tmux attach -t sessionname Attach to session with name sessionname   tmux kill-session -t sessionname    tmux has-session -t sessionname Returns 0 if session exists       PREFIX (CTRL-b) + … Description Custom mapping     d Detach    : Enter command mode    ?</description>
-    </item>
     
     <item>
       <title>how to create a docker registry</title>
@@ -47,15 +35,6 @@ tmux new -s sessionname Create a named session called sessionname   tmux new -s 
 第一步，下载（拉取）官方Ubuntu镜像，
 docker pull ubuntu  第二步，给上步骤中下载的ubuntu镜像添加tag(?)，生成“新的镜像”，（仔细看FS layer就会发现，其实与上步镜像是同一个镜像），
 docker tag ubuntu &amp;lt;your docker hub account&amp;gt;/ubuntu  第三步，将上步中的新镜像提交到Docker Hub。</description>
-    </item>
-    
-    <item>
-      <title>The restarting</title>
-      <link>http://gaoyans.cn/post/the-restarting/</link>
-      <pubDate>Fri, 12 May 2017 09:34:15 +0800</pubDate>
-      
-      <guid>http://gaoyans.cn/post/the-restarting/</guid>
-      <description></description>
     </item>
     
   </channel>

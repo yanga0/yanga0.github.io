@@ -34,19 +34,25 @@
   </url>
   
   <url>
+    <loc>http://gaoyans.cn/tags/devops/</loc>
+    <lastmod>2017-05-12T09:58:07+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://gaoyans.cn/categories/devops/</loc>
     <lastmod>2017-05-12T09:58:07+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gaoyans.cn/categories/docker/</loc>
+    <loc>http://gaoyans.cn/tags/docker/</loc>
     <lastmod>2017-05-12T09:58:07+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gaoyans.cn/tags/golang/</loc>
+    <loc>http://gaoyans.cn/categories/docker/</loc>
     <lastmod>2017-05-12T09:58:07+08:00</lastmod>
     <priority>0</priority>
   </url>
