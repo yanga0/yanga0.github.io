@@ -2,11 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://gaoyans.cn/about/</loc>
-    <lastmod>2017-05-12T15:18:03+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://gaoyans.cn/post/tmux-cheatsheet/</loc>
     <lastmod>2017-05-12T09:58:37+08:00</lastmod>
   </url>
@@ -27,20 +22,14 @@
   </url>
   
   <url>
-    <loc>http://gaoyans.cn/tags/development/</loc>
-    <lastmod>2017-05-12T15:18:03+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://gaoyans.cn/categories/development/</loc>
-    <lastmod>2017-05-12T15:18:03+08:00</lastmod>
+    <lastmod>2017-05-12T09:58:37+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gaoyans.cn/tags/devops/</loc>
-    <lastmod>2017-05-12T09:58:07+08:00</lastmod>
+    <loc>http://gaoyans.cn/tags/development/</loc>
+    <lastmod>2017-05-12T09:58:37+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -51,7 +40,7 @@
   </url>
   
   <url>
-    <loc>http://gaoyans.cn/tags/docker/</loc>
+    <loc>http://gaoyans.cn/tags/devops/</loc>
     <lastmod>2017-05-12T09:58:07+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -63,31 +52,25 @@
   </url>
   
   <url>
-    <loc>http://gaoyans.cn/tags/golang/</loc>
-    <lastmod>2017-05-12T15:18:03+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gaoyans.cn/categories/golang/</loc>
-    <lastmod>2017-05-12T15:18:03+08:00</lastmod>
+    <loc>http://gaoyans.cn/tags/docker/</loc>
+    <lastmod>2017-05-12T09:58:07+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://gaoyans.cn/</loc>
-    <lastmod>2017-05-12T15:18:03+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gaoyans.cn/tags/life/</loc>
-    <lastmod>2017-05-12T09:34:15+08:00</lastmod>
+    <lastmod>2017-05-12T09:58:37+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://gaoyans.cn/categories/life/</loc>
+    <lastmod>2017-05-12T09:34:15+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaoyans.cn/tags/life/</loc>
     <lastmod>2017-05-12T09:34:15+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -106,12 +89,6 @@
   
   <url>
     <loc>http://gaoyans.cn/tags/</loc>
-    <lastmod>2017-05-12T15:18:03+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gaoyans.cn/tags/tmux/</loc>
     <lastmod>2017-05-12T09:58:37+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -123,19 +100,25 @@
   </url>
   
   <url>
+    <loc>http://gaoyans.cn/tags/tmux/</loc>
+    <lastmod>2017-05-12T09:58:37+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://gaoyans.cn/categories/tools/</loc>
     <lastmod>2017-05-12T09:58:37+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gaoyans.cn/tags/writing/</loc>
+    <loc>http://gaoyans.cn/categories/writing/</loc>
     <lastmod>2017-05-12T09:34:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gaoyans.cn/categories/writing/</loc>
+    <loc>http://gaoyans.cn/tags/writing/</loc>
     <lastmod>2017-05-12T09:34:15+08:00</lastmod>
     <priority>0</priority>
   </url>
